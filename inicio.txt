@@ -1,0 +1,32 @@
+MySQL
+
+DataBase
+Interactuar con la DB desde terminal un poco engorroso
+Apps/Herramientas para interactuar/consultar DBs:
+- DbVisualizer
+- phpMyAdmin (tendrá muchos años, superviejo)
+- dbForge
+- SQLPro Studio
+- TablePlus (bastante nueva, bonita, distinta, limpia)
+- MySQL Workbench
+- ...
+
+Fundamentos son los mismos.
+
+XAMPP
+Modulo Apache: Apache HTTP Server
+programa que hace de servidor web local.
+
+schema = base datos?
+
+Partes de las DBs:
+- Tablas
+- Columnas (cada una tiene un tipo de dato)
+- Primary Key (el campo identifica de forma individual cada entrada, no repetidos)
+- NoNull (el campo tiene que ser no nullo)
+- Auto incremento (campo capaz de autoincrementarse)
+
+Tipos de datos
+- INT 
+- VARCHAR(50)
+- DATE
