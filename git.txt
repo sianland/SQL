@@ -1,0 +1,11 @@
+GitHub
+
+$ cd /proyecto
+
+$ git config --global user.name Mi_nombre 
+$ git config --global user.email Mi_email@mail.com
+(sin el --global solo afecta al repositorio actual)
+
+$ git init 
+$ git add carpeta/ archivo.txt README.md .gitignore
+$ git commit -m "¡Primer Commit!"
