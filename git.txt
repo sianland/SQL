@@ -1,11 +1,100 @@
 GitHub
 
-$ cd /proyecto
 
+Credenciales GitHub (solo informativo):
 $ git config --global user.name Mi_nombre 
 $ git config --global user.email Mi_email@mail.com
 (sin el --global solo afecta al repositorio actual)
 
-$ git init 
-$ git add carpeta/ archivo.txt README.md .gitignore
-$ git commit -m "¡Primer Commit!"
+
+Repositorio que nace en mi ordenador
+$ cd proyecto
+$ git init
+$ git add .
+$ git commit -m "Primer commit"
+$ git remote add origin https://github.com/usuario/repo.git
+$ git push -u origin main
+
+
+-m (message): Sirve para escribir el mensaje del commit directamente 
+                en la línea de comando, sin abrir el editor.
+-u (o --set-upstream): Significa establecer la rama “upstream” (rama de seguimiento).
+                Esto hace que tu rama local main quede vinculada a origin/main 
+                (el repositorio remoto).
+-v (verbose = modo detallado): Sirve para que el comando te muestre más información de la normal
+
+
+Para importar un repositorio:
+$ git clone https://github.com/user/repositorio.git
+$ cd repositorio
+$ git add .
+$ git commit -m "Cambios" 
+$ git push
+(El ordenador solo lo descarga y lo sincroniza)
+
+
+Resumen mental simple
+- Git = tu historial local
+- GitHub = copia remota en internet
+- remote add origin https... = “conectar tu repo local con GitHub” 
+                     (“Este repositorio remoto se llama origin y vive en esta URL”)
+- push = “subir commits ya hechos”
+(Ahí Git intenta conectar con GitHub y el sistema de autenticación entra en acción.)
+
+------------------------------------------------------
+
+Cómo se autentica Git con GitHub hoy en día
+Git ya no usa contraseña normal (desde 2021). Usa:
+
+1. 🟢 Token (PAT - Personal Access Token)
+
+Cuando haces push por HTTPS:
+- Git te pide usuario
+- En vez de contraseña, usas un token
+- Ese token lo generas en GitHub.
+
+2. 🟡 Credential Manager (automático)
+
+En Windows/Mac/Linux muchas veces:
+- Git guarda el token en el sistema
+- No te lo vuelve a pedir
+
+3. 🔵 SSH (la forma más pro)
+
+En vez de HTTPS:
+git@github.com:usuario/repo.git
+
+Aquí:
+- Usas una clave SSH
+- GitHub ya reconoce tu ordenador
+- No necesitas meter usuario/contraseña nunca
+
+
+Si ejecutas:
+$ git remote -v
+
+y sale:
+origin  https://github.com/sianland/SQL.git (fetch)
+origin  https://github.com/sianland/SQL.git (push)
+
+- Estoy usando HTTPS
+- Me autentico con token (PAT: Personal Access Token)
+
+si sale:
+origin  git@github.com:usuario/repo.git (fetch)
+origin  git@github.com:usuario/repo.git (push)
+
+- Estoy usando SSH
+- Clave privada guardada en mi ordenador
+
+
+TOKEN:
+inicia sesión github -> settings -> Developer settings -> Tokens clásicos -> 
+                        Generate new token -> acceso completo a repositorios ->
+                        Generate token -> copia el token y guárdalo (Ej: ghp_xxxxxxxxxxx)
+Cuando hagas:
+$ git push
+
+y te pida:
+Username → tu usuario de GitHub
+Password → 👉 PEGA EL TOKEN
