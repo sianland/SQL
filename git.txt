@@ -33,6 +33,14 @@ $ git push
 (El ordenador solo lo descarga y lo sincroniza)
 
 
+Cambiar repositorio:
+Opción 1 (mantener nombre origin, solo cambias destino):
+$ git remote set-url origin https://github.com/usuario/repo2.git
+Opción 2 (= pero más manual):
+$ git remote remove origin
+$ git remote add origin https://github.com/usuario/repo2.git
+
+
 Resumen mental simple
 - Git = tu historial local
 - GitHub = copia remota en internet
