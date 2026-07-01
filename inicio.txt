@@ -1,6 +1,6 @@
 MySQL
 
-pepe
+
 DataBase
 Interactuar con la DB desde terminal un poco engorroso
 Apps/Herramientas para interactuar/consultar DBs:
